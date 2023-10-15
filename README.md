@@ -1,6 +1,5 @@
 <p align="center">
-  <h2>Screenshots</h2>
-  <img src="https://logosmarcas.net/wp-content/uploads/2021/03/Docker-Logo.png" alt="App Screenshot" width="200" />
+  <img src="https://logosmarcas.net/wp-content/uploads/2021/03/Docker-Logo.png" alt="Docker Logo" width="200" />
 </p>
 
 # Containerized Project Examples
