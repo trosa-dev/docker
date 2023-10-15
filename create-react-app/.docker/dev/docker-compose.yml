@@ -1,0 +1,18 @@
+version: "3.8" # Specifies the version of the Docker Compose file format.
+
+services: # Indicates the beginning of the services configuration.
+  create-react-app-dev: # Defines a service named 'create-react-app'.
+    build: # Specifies the configuration for building the service's image.
+      context: ./../.. # Defines the build context as the parent directory.
+      dockerfile: .docker/dev/Dockerfile # Specifies the path to the Dockerfile.
+    container_name: create-react-app-dev # Assigns the custom name 'create-react-app' to the container.
+    image: create-react-app-dev:image # Specifies the name of the image as 'create-react-app:image'.
+    volumes: # Specifies the volumes to be mounted for the service.
+      - ../..:/app # Mounts the parent directory as a volume to '/app' inside the container.
+      # The following lines are essential since the 'npm run start' creates automatically the folder 'node_modules'.
+      - /app/node_modules # Creates a volume for the 'node_modules' directory.
+    ports: # Specifies the port mapping configuration.
+      - "3000:3000" # Maps port 3000 of the host to port 3000 of the container.
+    environment: # Specifies the environment variable configuration.
+      - NODE_ENV=development # Sets the environment variable 'NODE_ENV' to 'development'.
+    restart: always # Specifies that the container should always restart if it stops for any reason.
